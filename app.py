@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # ------------------ LOAD MODEL (SAFE) ------------------
-MODEL_PATH = "LOGISTIC_REGRESSION.pkl"
+MODEL_PATH = "modellogistic_regression.pkl"
 
 if not os.path.exists(MODEL_PATH):
     st.error(f"❌ Model file not found: {MODEL_PATH}")
@@ -109,3 +109,4 @@ st.info(
     It is intended for analytical support only and should not be considered financial advice.
     """
 )
+
