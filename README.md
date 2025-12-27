@@ -49,6 +49,3 @@ cd Bankruptcy-Risk-Assessment
 pip install -r requirements.txt
 streamlit run app/app.py
 ```
-
-## Disclaimer
-For educational and analytical purposes only.
