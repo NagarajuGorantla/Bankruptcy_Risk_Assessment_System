@@ -3,12 +3,8 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-Live-red)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
 **End-to-End Machine Learning Application for Business Failure Prediction**
-
-## 🚀 Live Application
-🔗 **Streamlit App**: https://bankruptcy-risk-assessment-system.streamlit.app/
-
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-brightgreen)](https://bankruptcyriskassessmentsystem-kde95dnh3p4qzeomfgsjgu.streamlit.app/)
 
 ---
 
