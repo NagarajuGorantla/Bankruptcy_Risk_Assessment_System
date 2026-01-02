@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 from pathlib import Path
 
-# ---------------- PAGE CONFIG ----------------
+# ---------------- PAGE CONFIG ---------------
 st.set_page_config(
     page_title="Bankruptcy Risk Assessment",
     layout="centered"
@@ -57,3 +57,4 @@ if st.button("Predict"):
         st.error("⚠️ High Bankruptcy Risk")
     else:
         st.success("✅ Low Bankruptcy Risk")
+
