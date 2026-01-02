@@ -1,25 +1,29 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import os
+from pathlib import Path
 
-st.set_page_config(page_title="Bankruptcy Risk Assessment", layout="centered")
+# ---------------- PAGE CONFIG ----------------
+st.set_page_config(
+    page_title="Bankruptcy Risk Assessment",
+    layout="centered"
+)
 
 st.title("🏦 Bankruptcy Risk Assessment System")
 st.write("Predict bankruptcy risk using a trained ML model.")
 
-# Paths (RELATIVE — deployment safe)
-MODEL_PATH = os.path.join("model", "LOGISTIC_REGRESSION.pkl")
-DATA_PATH = os.path.join("data", "Bankruptcy_Dataset.xlsx")
+# ---------------- PATHS (DEPLOYMENT SAFE) ----------------
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "models" / "LOGISTIC_REGRESSION.pkl"
 
-# Load model
+# ---------------- LOAD MODEL ----------------
 @st.cache_resource
 def load_model():
     return joblib.load(MODEL_PATH)
 
 model = load_model()
 
-# Sidebar inputs (example)
+# ---------------- SIDEBAR INPUTS ----------------
 st.sidebar.header("Input Features")
 
 industrial_risk = st.sidebar.slider("Industrial Risk", 0.0, 1.0, 0.5)
@@ -45,8 +49,10 @@ input_df = pd.DataFrame([[
     "operating_risk"
 ])
 
+# ---------------- PREDICTION ----------------
 if st.button("Predict"):
     prediction = model.predict(input_df)[0]
+
     if prediction == 1:
         st.error("⚠️ High Bankruptcy Risk")
     else:
